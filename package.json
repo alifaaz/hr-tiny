@@ -1,0 +1,39 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:watch": "esw -w index.js src/",
+    "lint": "npm  run lint",
+    "start": "npm-run-all --parallel  serve  ",
+    "serve": "DEBUG=app nodemon --exec babel-node ./src/bin/www.js ",
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "console-emoji": "0.0.2",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.5",
+    "morgan": "^1.9.1",
+    "node-emoji": "^1.8.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0"
+  }
+}
