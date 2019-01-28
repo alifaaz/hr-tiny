@@ -119,4 +119,4 @@ const indivisualSchema = new Schema({
 });
 
 
-export default mongoose.model('individuals', indivisualSchema);
+export default mongoose.model('Individuals', indivisualSchema);
