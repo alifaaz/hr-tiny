@@ -16,6 +16,12 @@ const socialObject = joi.object({
   url: str.uri(),
 });
 
+export const ID = {
+  params: {
+    id: str.required(),
+  },
+};
+
 export const indi = {
   body: {
     // name must be string between > 3 character and < 40 and it is a must value
