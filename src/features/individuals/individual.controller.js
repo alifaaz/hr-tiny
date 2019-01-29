@@ -198,7 +198,7 @@ const getIndividuals = (req, res, next) => {
   } else if (pt === 'indi_one' && id) {
 
     INDE.findById(id)
-      .then(indi => cleanResponse(res, {code:200 ,msg:"لقد احضرت الانسان", data:{indi}}))
+      .then(indi => cleanResponse(res, {code: 200, msg:"لقد احضرت الانسان", data: { indi }}))
       .catch(err => console.log(_c.error(err)))
 
 
