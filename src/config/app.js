@@ -9,7 +9,7 @@ import con from './DB';
 import { logs } from './conf';
 import error from './errorHandling';
 import Errora from './errora';
-
+import  routes  from "../features/index";
 
 const app = express();
 const log = debug('app');
@@ -23,6 +23,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // corse origin problems
 app.use(cors());
+
+
+// routers
+
+app.use('/api', routes.individuals)
 
 app.get('/', (req, res) => res.status(200).send({ msg: " Hi Folks What's Up " }));
 app.get('/error', (req, res, next) => {

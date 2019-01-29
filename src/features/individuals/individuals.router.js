@@ -11,12 +11,14 @@ const router = Router();
 router.route('/individual').post(validate(indi), controller.addIndivduals);
 
 // editing individual
-router.route('/individual/edit').post(validate(indi), controller.editIndividual);
+router.route('/individual/edit').patch(validate(indi), controller.editIndividual);
 
 
 // deletting individual
 
 router.route('/individual/:id').delete(validate(ID), controller.deleteIndivisual);
 
+// get individuals
 
+router.route('/individuals').get(controller.getIndividuals)
 export default router;

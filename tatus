@@ -1,0 +1,41 @@
+[33mcommit a4fe61a5f17f15152c353e0de2d80def1c950daf[m[33m ([m[1;36mHEAD -> [m[1;32mindividuals[m[33m)[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Mon Jan 28 06:09:09 2019 +0300
+
+    individuals routers
+
+[33mcommit 3fd80832659bcfde217b0764a424a13e0d1d4f4e[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Mon Jan 28 03:50:57 2019 +0300
+
+    individual withoutpagination
+
+[33mcommit 0a474626921131c128a3b1971f2f0e1f0525f2df[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Mon Jan 28 01:14:06 2019 +0300
+
+    validation
+
+[33mcommit aeb05b499058c24d2bad93f68992a27d86648144[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Sun Jan 27 23:36:26 2019 +0300
+
+    individiuals model schema implemented
+
+[33mcommit b4819e5b4c8f8c3f6f0a7a79e2e98eee9bc4ca90[m[33m ([m[1;31mhr/individuals[m[33m)[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Sun Jan 27 05:08:33 2019 +0300
+
+    individuals
+
+[33mcommit 676925f94dc4f588bfb77535f0fc360f82e9319b[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Sun Jan 27 04:56:22 2019 +0300
+
+    start individuals features
+
+[33mcommit 4e64a13fb756841f67ab35d3a27e61fca20399d1[m
+Author: alifaaz <alifaazali@gmail.com>
+Date:   Sun Jan 27 04:52:54 2019 +0300
+
+    starter thin
