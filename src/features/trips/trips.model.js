@@ -22,8 +22,9 @@ const tripsSchema = new Schema({
   note: String,
   date: { from: Date, to: Date },
   place: String,
-  sby: [{ $type: SchemaTypes.ObjectId, ref: 'Individuals' }],
-  travelers: [{ $type: SchemaTypes.ObjectId, ref: 'Individuals' }],
+  sby: [{ $type: Schema.Types.ObjectId, ref: 'Individuals' }],
+  travelers: [{ $type: Schema.Types.ObjectId, ref: 'Individuals' }],
+  by: Schema.Types.ObjectId,
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
   collation: { locale: 'ar' },
