@@ -22,6 +22,7 @@ const tripsSchema = new Schema({
   note: String,
   date: { from: Date, to: Date },
   place: String,
+  status: Number,
   sby: [{ $type: Schema.Types.ObjectId, ref: 'Individuals' }],
   travelers: [{ $type: Schema.Types.ObjectId, ref: 'Individuals' }],
   by: Schema.Types.ObjectId,

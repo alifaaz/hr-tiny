@@ -1,11 +1,11 @@
 ### BACKEND SERVER FOR HAYDER APP FOR CRM
 
 ## FEARUTE TO IMPLEMENT
-- [] MANAGE individuals
-    - [] ADD
-    - [] EDIT
-    - [] DELETE
-    - [] SHOW
+- [/] MANAGE individuals
+    - [/] ADD
+    - [/] EDIT
+    - [/] DELETE
+    - [/] SHOW
 - [] MANAGE courses
     - [] ADD
     - [] EDIT

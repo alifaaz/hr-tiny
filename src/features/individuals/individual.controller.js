@@ -3,13 +3,8 @@ import INDE from './indivisual.model';
 import _c from '../../config/chalking';
 import _E from '../../config/errora';
 // const e = new _E()
+import { cleanResponse } from "../../helpers/resonses";
 
-const cleanResponse = (res, { msg, code, data }) => {
-  if (data) {
-    return res.status(code).send({ msg, data });
-  }
-  return res.status(code).send({ msg });
-};
 
 
 // add fuckers to database
