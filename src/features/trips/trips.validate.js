@@ -6,14 +6,11 @@ const ary = joi.array();
 
 export const queryValidate = {
   query: {
-    trips_ui: str.min(7).max(10).required(),
-    l: joi.number(),
-    p: joi.number(),
-
-  },
-  params: {
-    id: str,
-  },
+    trips_ui: str.min(6).max(10).required(),
+    l: str.min(1).max(3),
+    p: str.min(1).max(3),
+    id: str
+  }
 };
 export const edtiDeleteValidate = {
   params: {
@@ -28,9 +25,9 @@ export const tripValidate = {
       type: str.min(2).max(100),
       note: str,
       place: str,
-      status: joi.number().min(1).max(10),
+      status: str.max(1),
       date: joi.object({
-        from: joi.date().min('1-1-2'),
+        from: joi.date(),
         to: joi.date(),
       }),
       sby: ary.items(str),

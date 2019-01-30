@@ -12,10 +12,10 @@
     - [] DELETE
     - [] SHOW
 - [] MANAGE trips
-    - [] ADD
-    - [] EDIT
-    - [] DELETE
-    - [] SHOW
+    - [/] ADD
+    - [/] EDIT
+    - [/] DELETE
+    - [/] SHOW
 - [] MANAGE relations
     - [] ADD
     - [] EDIT
