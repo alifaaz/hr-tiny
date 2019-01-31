@@ -18,6 +18,7 @@ import { Schema, model } from 'mongoose';
  @param {String} editBy
 
  *  */
+const inter = ['جيد', 'سيء', 'متوسط', 'مقبول'];
 const courseSchema = new Schema({
   title: { $type: String, required: true },
   type: String,
@@ -28,7 +29,7 @@ const courseSchema = new Schema({
     to: Date,
   },
   status: String,
-  interaction: { $type: String },
+  interaction: { $type: String, enum: inter },
   research: [{ title: String }],
   individuals: { $type: Schema.Types.ObjectId, ref: 'Individuals' },
   by: { $type: Schema.Types.ObjectId, ref: 'Individuals' },
