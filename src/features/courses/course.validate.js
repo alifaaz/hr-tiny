@@ -3,6 +3,19 @@ import joi from 'joi';
 const str = joi.string();
 const ary = joi.array();
 const inter = ['جيد', 'سيء', 'متوسط', 'مقبول'];
+
+export const getallCourses = {
+  query: {
+    p: joi.number(),
+    l: joi.number(),
+  },
+};
+
+export const getDeleteCourse = {
+  params: {
+    id: str.required(),
+  },
+};
 // eslint-disable-next-line import/prefer-default-export
 export const courseValidate = {
   body: {
