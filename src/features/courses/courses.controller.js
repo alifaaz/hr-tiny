@@ -74,3 +74,12 @@ const getCourse = (req, res, next) => {
 		.catch(err => handleError(err,next, () => () => console.log(_c.error(err))))
 
 }
+
+
+export default {
+	getCourse,
+	getallCourses,
+	deleteCourse,
+	editCourse,
+	addCourse
+}
