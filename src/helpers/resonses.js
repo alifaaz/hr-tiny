@@ -16,7 +16,7 @@ export const coolResponses = ({
   return res.status(code).send({ msg });
 };
 
-export handleError(err,next,callback){
+export const  handleError = (err, next, callback) => {
 	callback()
 
 

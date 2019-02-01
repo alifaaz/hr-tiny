@@ -1,6 +1,6 @@
 import COURSE from './courses.model';
 import { cleanResponse, coolResponses, handleError } from '../../helpers/resonses';
-import { pagination } from "../../helpers/pagination";
+import { pagination } from '../../helpers/pagination';
 import _c from '../../config/chalking';
 
 // add coursr
@@ -49,37 +49,39 @@ const deleteCourse = (req, res, next) => {
   const { id } = req.params;
 
   COURSE.findByIdAndDelete(id)
-    .then(course => coolResponses({ res, code: 200, msg: 'لقد قمت بمسح هذا العنصر' }))
+    .then(course => coolResponses({ res, code: 200, msg: 'لقد قمت بمسح هذا العنصر' },()=> console.log(course)))
     .catch(err => handleError(err, next, () => console.log(_c.error(err))));
 };
 
 
 // show  courses
-const getallCourses = (res, res, next) => {
-	const {p,l} = req.query
-	const skip = pagination(p,l)
+const getallCourses = (req, res, next) => {
+  const { p, l } = req.query;
+  const skip = pagination(p, l);
 
-	COURSE.find({},{id,title,status,place},{skip,limit: parseInt(l)})
-		.then(cousres => coolResponses({ res, data: cousres,code: 200, msg:'لقد قمت باسترجاع البيانات'}))
-		.catch(err => handleError(err,next, () => () => console.log(_c.error(err))))
-}
+  COURSE.find({}, {
+    id:1, title:1, status:1, place:1,
+  }, { skip, limit: parseInt(l) }).then(cousres => coolResponses({
+      res, data: cousres, code: 200, msg: 'لقد قمت باسترجاع البيانات',
+    }, () => console.log(cousres))).catch(err => handleError(err, next, () => console.log(_c.error(err))));
+};
 
 // get one course
 const getCourse = (req, res, next) => {
-
-	const {id} = req.params
-
+  const { id } = req.params;
+  console.log(_c.success(id));
 	COURSE.findById(id)
-		.then(course => coolResponses({ res, data: course, code: 200, msg: 'لقد قمت باسترجاع البيانات'}))
-		.catch(err => handleError(err,next, () => () => console.log(_c.error(err))))
-
-}
+		.then(course => coolResponses({
+    res, data: course, code: 200, msg: 'لقد قمت باسترجاع البيانات',
+	},()=> console.log(course)))
+		.catch(err => console.log(_c.error(err)));
+};
 
 
 export default {
-	getCourse,
-	getallCourses,
-	deleteCourse,
-	editCourse,
-	addCourse
-}
+  getCourse,
+  getallCourses,
+  deleteCourse,
+  editCourse,
+  addCourse,
+};

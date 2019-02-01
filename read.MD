@@ -56,7 +56,9 @@ SRC__
 ---
 ---
 
-
+## error to sovle
+1. [/] casr error mongoose
+		__bynot apply sny extra char to id__
 alifae(alifaazali@gmail.com)
 __IS __NOT __GOOOD__
 ali - [aligaazali@mail.com]

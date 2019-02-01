@@ -16,7 +16,7 @@ router.route('/course/:id').patch(validate(getDeleteCourse), validate(courseVali
 router.route('/course/:id').delete(validate(getDeleteCourse), controller.deleteCourse);
 
 // get all courses
-router.route('/course').get(controller.getallCourses);
+router.route('/courses').get(validate(getallCourses), controller.getallCourses);
 
 // get one course
 router.route('/course/:id').get(validate(getDeleteCourse), controller.getCourse);

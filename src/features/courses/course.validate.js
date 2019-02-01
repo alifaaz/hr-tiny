@@ -6,8 +6,8 @@ const inter = ['جيد', 'سيء', 'متوسط', 'مقبول'];
 
 export const getallCourses = {
   query: {
-    p: joi.number(),
-    l: joi.number(),
+    p: joi.number().required(),
+    l: joi.number().required(),
   },
 };
 
