@@ -17,7 +17,7 @@ const realtionSchema = new Schema({
   note: String,
   who: String,
   Where: String,
-  Phones: [String],
+  phones: [String],
   dept: String,
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },

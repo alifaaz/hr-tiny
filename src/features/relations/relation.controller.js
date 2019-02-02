@@ -16,7 +16,7 @@ const addRelation = (req, res, next) => {
     .then((rel) => {
       // eslint-disable-next-line no-console
       console.log(_c.success(rel));
-      cleanResponse(res, { code: 200, msg: 'لقد نجحت في اضافة علاقة جديدة' });
+      cleanResponse(res, { data:rel ,code: 200, msg: 'لقد نجحت في اضافة علاقة جديدة' });
     })
     .catch((err) => {
       console.log(_c.error(err));
