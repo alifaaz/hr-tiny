@@ -6,12 +6,12 @@
     - [/] EDIT
     - [/] DELETE
     - [/] SHOW
-- [] MANAGE courses
-    - [] ADD
-    - [] EDIT
-    - [] DELETE
-    - [] SHOW
-- [] MANAGE trips
+- [/] MANAGE courses
+    - [/] ADD
+    - [/] EDIT
+    - [/] DELETE
+    - [/] SHOW
+- [/] MANAGE trips
     - [/] ADD
     - [/] EDIT
     - [/] DELETE
@@ -57,8 +57,9 @@ SRC__
 ---
 
 ## error to sovle
-1. [/] casr error mongoose
+1. [/] cast error mongoose
 		__bynot apply sny extra char to id__
+2. [/]  RangeError => problem here at query function of mongodb
 alifae(alifaazali@gmail.com)
 __IS __NOT __GOOOD__
 ali - [aligaazali@mail.com]
