@@ -59,7 +59,7 @@ const getallRelation = (req, res, next) => {
   const { p, l } = req.query;
   const skip = pagination(p, l);
 
-	RELATION.find({}, {
+  RELATION.find({}, {
     id: 1, title: 1, status: 1, place: 1,
   }, { skip, limit: parseInt(l) }).then(rel => coolResponses({
     res, data: rel, code: 200, msg: 'لقد قمت باسترجاع البيانات',
@@ -70,18 +70,18 @@ const getallRelation = (req, res, next) => {
 const getRelation = (req, res, next) => {
   const { id } = req.params;
   console.log(_c.success(id));
-	RELATION.findById(id)
+  RELATION.findById(id)
     .then(rel => coolResponses({
       res, data: rel, code: 200, msg: 'لقد قمت باسترجاع البيانات',
     }, () => console.log(rel)))
-		.catch(err => handleError(err, next, () => console.log(_c.error(err))));
+    .catch(err => handleError(err, next, () => console.log(_c.error(err))));
 };
 
 
 export default {
-	getallRelation,
-	getRelation,
-	editRelation,
-	deleteRelation,
-	addRelation
+  getallRelation,
+  getRelation,
+  editRelation,
+  deleteRelation,
+  addRelation,
 };
