@@ -16,11 +16,11 @@
     - [/] EDIT
     - [/] DELETE
     - [/] SHOW
-- [] MANAGE relations
-    - [] ADD
-    - [] EDIT
-    - [] DELETE
-    - [] SHOW
+- [/] MANAGE relations
+    - [/] ADD
+    - [/] EDIT
+    - [/] DELETE
+    - [/] SHOW
 - [] MANAGE USER
     - [] ADD
     - [] EDIT
