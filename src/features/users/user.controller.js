@@ -1,7 +1,7 @@
 import JWT from 'jsonwebtoken';
 import bycrpt from 'bcrypt-nodejs';
 import USER from './user.model';
-import {  handleError, coolResponses } from '../../helpers/resonses';
+import { handleError, coolResponses } from '../../helpers/resonses';
 import _C from '../../config/chalking';
 import { jwt_scret } from '../../config/conf';
 // add users
@@ -18,10 +18,29 @@ const addUser = (req, res, next) => {
     .catch(err => handleError(err, next, () => console.log(err)));
 };
 
+
+// edit user
+const editUser = (req, res, next) => {
+  const { id } = req.params;
+  const { data } = req.body;
+
+  USER.findByIdAndUpdate(id, data).then(user => coolResponses({ res, code: 200, msg: 'لقد قمت بتعديل انسان  بنجاح' }, () => console.log(_C.bgreen(user))))
+    .catch(err => handleError(err, next, () => console.log(err)));
+};
+
+const getUser = (req, res, next) => {
+  const { id } = req.params;
+
+  USER.findById(id).then(user => coolResponses({
+ res, code: 200, msg: 'لقد قمت باضافة انسان جديد بنجاح', data: user
+}, () => console.log(_C.bgreen(user))))
+    .catch(err => handleError(err, next, () => console.log(err)));
+};
+
 const login = (req, res, next) => {
   const { email, pwd } = req.body;
 
-  USER.findOne(email).then((user) => {
+  USER.findOne({ email }).then((user) => {
     if (!user) {
       return coolResponses({ res, code: 401, msg: 'عفوا لكن غير مصرح لك بالدخول' });
     }
@@ -58,4 +77,6 @@ export default {
   authorizeServer,
   login,
   addUser,
+  getUser,
+  editUser,
 };

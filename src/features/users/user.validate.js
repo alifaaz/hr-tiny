@@ -16,6 +16,14 @@ export const validateUser = {
       status: str.allow(status),
     },
   },
+  params: {
+    id: str,
+  },
 };
 
-
+export const login = {
+  body: {
+    email: str.email().required(),
+    pwd: str.regex(/^[a-zA-Z0-9]{6,30}$/).required(),
+  },
+};
