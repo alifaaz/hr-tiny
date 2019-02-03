@@ -43,8 +43,12 @@
 
 
 
-## FOLDER STRUCTURE
 
+
+
+
+
+## FOLDER STRUCTURE
 SRC__
      |_bin
         |_www.js server start
@@ -53,13 +57,25 @@ SRC__
 +++==---
 ---
 
----
----
----
+
 ## error to sovle
 1. [/] cast error mongoose
 		__bynot apply sny extra char to id__
 2. [/]  RangeError => problem here at query function of mongodb
+
+
+### permission impelemetaion
+every feature  has its own flag so that make it possible to reach or not so when client ask for spesific feature the client must apply
+- individuals ==> flag = indi
+- course ==> flag = couese
+- trips ==> flag = trip
+- relations ==> flag = relation
+- setting ==> flag = ["admin","user"]
+- reports ==> flag = report
+- task ==> flag = task
+- all ==> flag = admin
+
+
 alifae(alifaazali@gmail.com)
 __IS __NOT __GOOOD__
 ali - [aligaazali@mail.com]
