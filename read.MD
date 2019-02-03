@@ -52,10 +52,10 @@ SRC__
         |_erro
 +++==---
 ---
----
----
----
 
+---
+---
+---
 ## error to sovle
 1. [/] cast error mongoose
 		__bynot apply sny extra char to id__
@@ -64,3 +64,4 @@ alifae(alifaazali@gmail.com)
 __IS __NOT __GOOOD__
 ali - [aligaazali@mail.com]
 
+***************** __CHANNEL__  ****************************************** __CHANNEL__ *****************************************__CHANNEL__ **************** __CHANEEL__

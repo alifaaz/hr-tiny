@@ -15,13 +15,12 @@ const userSchema = new Schema({
 
 
 userSchema.pre('save', (next) => {
+  if (!this.isModified('pwd')) return next();
 
-	if(!this.isModified('pwd')) return next();
-
-	this.pwd = bcrypt.hashSync(this.pwd, bycrpt.genSaltSync(10));
+  this.pwd = bcrypt.hashSync(this.pwd, bcrypt.genSaltSync(10));
 
   return next();
 });
 
 
-export default model('User', userSchema)
+export default model('User', userSchema);
