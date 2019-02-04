@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-/**
+/** the metas of the name
  * @param {ARRAY} c_type - course type
  * @param {ARRAY} t_type - trip type
  * @param {ARRAY} r_type - relation type
@@ -15,15 +15,8 @@ import { Schema, model } from 'mongoose';
 
 
 const settingSchema = new Schema({
-  c_type: [String],
-  t_type: [String],
-  r_type: [String],
-  depts:  [String],
-  jobs:   [String],
-  state:  [String],
-  status_type: [String],
-  p_type: [String],
-  peciality: [String],
+  name: String,
+  options: [String],
   by: Schema.Types.ObjectId,
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
@@ -31,4 +24,4 @@ const settingSchema = new Schema({
 });
 
 
-export default model('Setting', settingSchema)
+export default model('Setting', settingSchema);
