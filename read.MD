@@ -28,10 +28,10 @@
     - [/] SUSPEND
     - [/] SHOW
 - [] MANAGE settings
-    - [] ADD
-    - [] EDIT
+    - [/] ADD
+    - [/] EDIT
     - [] DELETE
-    - [] SHOW
+    - [/] SHOW
 - [] MANAGE task
     - [] ADD
     - [] EDIT

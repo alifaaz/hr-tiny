@@ -77,25 +77,53 @@ const getAllUsers = (req, res, next) => {
 
 // authorizations server
 const authorizeServer = rolea => (req, res, next) => {
-  const jwt = req.headers.authorization.split(' ')[1];
-  log(jwt);
-  JWT.verify(jwt, jwt_scret, (err, decode) => {
-    if (err) {
-      handleError(err, next, () => log('invalid jwt'));
-    }
-    const { permissions, role, email } = decode;
-    console.log(_C.yelo(decode.email, decode.per));
+  if (req.headers.authorization) {
+		const jwt = req.headers.authorization.split(' ')[1];
+		log(jwt);
+		if (!!jwt) {
+			log('inside jwt')
+		// 	// verfy jwt
+			JWT.verify(jwt, jwt_scret, (err, decode) => {
 
-    USER.findOne({ email }).then((user) => {
-      if (!user) {
-        return coolResponses({ res, code: 401, msg: 'عفوا لكن غير مصرح لك بالدخول' }, () => log(user));
-      }
-      if (user.permissions.includes(rolea) || user.role === 'admin') {
-        return next();
-      }
-      return coolResponses({ res, code: 401, msg: '  عفوا لكن غير مصرح لك بالدخول' }, () => log('out of here'));
-    }).catch(err => handleError(err, next, () => log('error at database level')));
-  });
+				// check errors
+				if (err) {
+					return handleError(err, next, () => log(_C.error(err)));
+				}
+
+				// extract email fromm decoded jwt
+				const {  email } = decode;
+
+
+				// check if the user is in the database
+				USER.findOne({ email }).then((user) => {
+
+					// check if the user here
+					if (!user) {
+						console.log(_C.yelo(decode.email, decode.per));
+						return coolResponses({ res, code: 401, msg: 'عفوا لكن غير مصرح لك بالدخول' }, () => log(user));
+					}
+
+					console.log(user, "iam here");
+		// 			console.log("and here#cond2")
+
+					// check user permissions
+					if (user.permissions.includes(rolea) || user.role == 'admin') {
+						console.log("and here#cond3")
+						return next();
+					}
+
+					return coolResponses({ res, code: 401, msg: '  عفوا لكن غير مصرح لك بالدخول' }, () => log('out of here'));
+				}).catch(err => handleError(err, next, () => log(err)));
+			});
+		}
+		log('outside jwt cond')
+
+
+	}else{
+
+		return coolResponses({ res, code: 401, msg: '  عفوا لكن غير مصرح لك بالدخول' }, () => log('out of auth'));
+	}
+
 };
 
 

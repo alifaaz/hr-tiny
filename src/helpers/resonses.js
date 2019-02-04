@@ -18,7 +18,7 @@ export const coolResponses = ({
 
 export const  handleError = (err, next, callback) => {
 	callback()
-	next(err)
+ return  next(err)
 }
 
 export default {

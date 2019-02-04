@@ -12,3 +12,15 @@ export const addSetting = {
   },
 };
 
+export const updateSetting = {
+  body: {
+    data: {
+      name: str,
+      options: joi.array().items(str),
+      by: str,
+    },
+  },
+  params: {
+    name: str.required(),
+  },
+};
