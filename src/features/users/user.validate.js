@@ -24,6 +24,18 @@ export const validateUser = {
 export const login = {
   body: {
     email: str.email().required(),
-    pwd: str.regex(/^[a-zA-Z0-9]{6,30}$/).required(),
+    pwd: str.regex(/^[a-zA-Z0-9]{5,30}$/).required(),
   },
+};
+
+export const pagination = {
+
+  query: {
+
+    l: joi.number().required(),
+
+    p: joi.number().required(),
+
+  },
+
 };

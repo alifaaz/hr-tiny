@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt-nodejs';
 const status = ['active', 'disable', 'suspended'];
 const userSchema = new Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   pwd: { type: String, required: true },
   permissions: [String],
   role: String,
@@ -15,7 +15,7 @@ const userSchema = new Schema({
 });
 
 
-userSchema.pre('save', (next) => {
+userSchema.pre('save', function (next) {
   if (!this.isModified('pwd')) return next();
 
   this.pwd = bcrypt.hashSync(this.pwd, bcrypt.genSaltSync(10));

@@ -11,10 +11,14 @@ router.route('/user').post( validate(validateUser), controller.addUser)
 // login user
 router.route('/login').post(validate(login), controller.login)
 
-
-
+//
 // edit user
 router.route('/user/:id').patch(validate(validateUser, controller.editUser))
 
 // get user by id
 router.route('/user/:id').get(controller.getUser)
+
+// get all users
+router.route('/users').get(controller.getAllUsers)
+
+export default router

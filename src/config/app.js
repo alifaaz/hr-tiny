@@ -26,11 +26,11 @@ app.use(cors());
 
 
 // routers
-
 app.use('/api', routes.individuals)
 app.use('/api', routes.trips)
 app.use('/api', routes.courses)
 app.use('/api', routes.relations)
+app.use('/api', routes.users)
 
 app.get('/', (req, res) => res.status(200).send({ msg: " Hi Folks What's Up " }));
 app.get('/error', (req, res, next) => {
