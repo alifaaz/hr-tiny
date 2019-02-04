@@ -20,6 +20,6 @@ router.route('/user/:id').patch(controller.authorizeServer('user'), validate(val
 router.route('/user/:id').get(controller.authorizeServer('user'), controller.getUser);
 
 // get all users
-router.route('/users').get(controller.getAllUsers);
+router.route('/users').get(controller.authorizeServer('user'), controller.getAllUsers);
 
 export default router;

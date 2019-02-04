@@ -21,12 +21,12 @@
     - [/] EDIT
     - [/] DELETE
     - [/] SHOW
-- [] MANAGE USER
-    - [] ADD
-    - [] EDIT
-    - [] DELETE
-    - [] SUSPEND
-    - [] SHOW
+- [/] MANAGE USER
+    - [/] ADD
+    - [/] EDIT
+    - [/] DELETE
+    - [/] SUSPEND
+    - [/] SHOW
 - [] MANAGE settings
     - [] ADD
     - [] EDIT
