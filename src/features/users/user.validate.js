@@ -4,6 +4,25 @@ const str = joi.string();
 
 const status = ['active', 'disable', 'suspended'];
 
+
+// edit user
+export const validateEditUser = {
+  body: {
+    data: {
+      name: str,
+      email: str.email(),
+      pwd: str.regex(/^[a-zA-Z0-9]{6,30}$/),
+      role: str,
+      permissions: joi.array().items(str),
+      status: str.allow(status),
+    },
+  },
+  params: {
+    id: str,
+  },
+};
+
+
 // eslint-disable-next-line import/prefer-default-export
 export const validateUser = {
   body: {
@@ -15,9 +34,6 @@ export const validateUser = {
       permissions: joi.array().items(str),
       status: str.allow(status),
     },
-  },
-  params: {
-    id: str,
   },
 };
 
